@@ -3,7 +3,7 @@
 using namespace std;
 
 // Function declaration
-bool isSorted(const int* arr, const int size);
+bool isSorted(const int *arr, const int size);
 
 // Test 1: Already sorted array
 void testSortedArray()
@@ -70,7 +70,7 @@ void testNegativeSorted()
 }
 
 // Actual function
-bool isSorted(const int* arr, const int size)
+bool isSorted(const int *arr, const int size)
 {
     for (int i = 0; i < size - 1; i++)
     {
@@ -78,6 +78,16 @@ bool isSorted(const int* arr, const int size)
         {
             return false;
         }
+    }
+    return true;
+}
+
+bool isSorted(const int *arr, const int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (arr[i] > arr[i + 1])
+            return false;
     }
     return true;
 }
