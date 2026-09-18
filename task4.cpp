@@ -2,8 +2,8 @@
 #include <cassert>
 using namespace std;
 
-// Function declaration
-bool isSorted(const int *arr, const int size);
+//function declaration
+bool isSorted(const int* arr, const int size);
 
 // Test 1: Already sorted array
 void testSortedArray()
@@ -70,8 +70,15 @@ void testNegativeSorted()
 }
 
 // Actual function
+
 bool isSorted(const int *arr, const int size)
 {
+    // Handle edge case for 0 or 1 element safely
+    if (size <= 1)
+    {
+        return true;
+    }
+
     for (int i = 0; i < size - 1; i++)
     {
         if (arr[i] > arr[i + 1])
@@ -81,17 +88,6 @@ bool isSorted(const int *arr, const int size)
     }
     return true;
 }
-
-bool isSorted(const int *arr, const int size)
-{
-    for (int i = 0; i < size; i++)
-    {
-        if (arr[i] > arr[i + 1])
-            return false;
-    }
-    return true;
-}
-
 int main()
 {
     testSortedArray();
